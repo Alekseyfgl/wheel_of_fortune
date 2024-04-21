@@ -1,15 +1,10 @@
-const BETS_ACCEPTED_TIME = 15000; // Время приема ставок
-const DRAW_TIME = 5000; // время розыгрыша, т.е. выпадения числа
-const PAYOUT_TIME = 1000; // время зачисление выигрыша в МС
-
-export function mockDelay(milliseconds: number) {
-  return new Promise((resolve) => setTimeout(resolve, milliseconds));
-}
-
-export const enum OPERATION {
-  ADD = "ADD",
-  MINUS = "MINUS",
-}
+import {
+  BETS_ACCEPTED_TIME,
+  DRAW_TIME,
+  OPERATION,
+  PAYOUT_TIME,
+} from "./consts";
+import { mockDelay } from "./utils";
 
 class GameWheel {
   public id: number = +new Date(); //лучше использовать UUID
